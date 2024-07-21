@@ -1,0 +1,12 @@
+{
+  "version": "3",
+  "redirects": {
+    "https://deno.land/x/ulid/mod.ts": "https://deno.land/x/ulid@v0.3.0/mod.ts"
+  },
+  "remote": {
+    "https://deno.land/std@0.213.0/dotenv/mod.ts": "46cc7a78cf3f7ba533c8c9b90407a365f925be332ebdc867a1f502614e3d8523",
+    "https://deno.land/std@0.213.0/dotenv/parse.ts": "55d5d1a5ba76c1324e6dc2f2f7917f03c47e5da5c2c55af11fd0fe2d6a3d3a2e",
+    "https://deno.land/std@0.213.0/dotenv/stringify.ts": "0047ad7068289735d08964046aea267a750c141b494ca0e38831b89be6c020c2",
+    "https://deno.land/x/ulid@v0.3.0/mod.ts": "f7ff065b66abd485051fc68af23becef6ccc7e81f7774d7fcfd894a4b2da1984"
+  }
+}
