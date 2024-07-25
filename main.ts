@@ -24,6 +24,16 @@ function isLogData(data: object): data is LogData {
 }
 
 Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, X-Preshared-Key",
+      },
+      status: 204,
+    });
+  }
   if (!req.headers.has("X-Preshared-Key") || req.headers.get("X-Preshared-Key") !== SHARED_SECRET)
     return new Response("Unauthorized", { status: 401 });
   switch (req.method) {
@@ -32,7 +42,10 @@ Deno.serve(async (req) => {
       const data = []
       for await (const { key, value } of entries) data.push({ key, value });
       return new Response(JSON.stringify(data), {
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
         status: 200,
       });
     }
